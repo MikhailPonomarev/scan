@@ -1,5 +1,6 @@
 export const fonts = {
     inter: '"Inter", sans-serif',
+    ferry: '"Ferry"',
 };
 
 export const primaryColors = {

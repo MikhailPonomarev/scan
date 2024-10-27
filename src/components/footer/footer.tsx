@@ -1,6 +1,6 @@
 import { Address, StyledFooter, TextContent } from './footer.style';
 import { ReactComponent as FooterLogo } from '../../assets/footer/footer_logo.svg';
-import Link from '../common/link';
+import Link from '../common/link/link';
 import { primaryColors } from '../../style/variables.style';
 
 const Footer = () => {

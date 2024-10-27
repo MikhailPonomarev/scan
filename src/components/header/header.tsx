@@ -1,5 +1,5 @@
 import { ReactComponent as HeaderLogo } from '../../assets/header/header_logo.svg';
-import Link from '../common/link';
+import Link from '../common/link/link';
 import { AuthContainer, Divider, LoginBtn, Navigation, StyledHeader } from './header.style';
 
 const Header = () => {
