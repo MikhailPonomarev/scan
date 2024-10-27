@@ -1,5 +1,6 @@
 import Banner from './banner/banner';
 import { LandingWrapper } from './landing.style';
+import Separator from './separator/separator';
 import Slider from './slider/slider';
 
 const Landing = () => {
@@ -7,6 +8,7 @@ const Landing = () => {
         <LandingWrapper>
             <Banner />
             <Slider />
+            <Separator />
         </LandingWrapper>
     );
 }

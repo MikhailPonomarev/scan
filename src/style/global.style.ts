@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Ferry';
         src: url('/fonts/ferry_black.otf') format('opentype');
     }
+
+    body {
+        margin: 0;
+    }
 `;
