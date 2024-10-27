@@ -4,12 +4,12 @@ import { StyledLink } from './link.style';
 interface Props {
     href: string;
     text: string;
-    color?: string;
+    fontColor?: string;
 }
 
-const Link: FC<Props> = ({ href, text, color }) => {
+const Link: FC<Props> = ({ href, text, fontColor: color }) => {
     return (
-        <StyledLink href={href} color={color}>{text}</StyledLink>
+        <StyledLink href={href} fontColor={color}>{text}</StyledLink>
     );
 }
 

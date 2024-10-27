@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { primaryColors, secondaryColors } from '../../../style/variables.style';
+import { ButtonStyleProps } from './buttonStyleProps';
 
-export const StyledButton = styled.button`
-    width: 335px;
-    height: 60px;
-    font-size: 22px;
+export const StyledButton = styled.button<ButtonStyleProps>`
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
+    font-size: ${(props) => props.fontSize};
     border: none;
     border-radius: 5px;
-    background-color: ${secondaryColors.purple};
-    color: ${primaryColors.white};
+    background-color: ${(props) => props.backgroundColor};
+    color: ${(props) => props.fontColor};
     cursor: pointer;
 `;

@@ -11,9 +11,9 @@ const Footer = () => {
                 <Address>
                     г. Москва, Цветной б-р, 4
                     <br></br>
-                    <Link href='tel:+74957712111' text='+7 495 771 21 11' color={primaryColors.white}/>
+                    <Link href='tel:+74957712111' text='+7 495 771 21 11' fontColor={primaryColors.white}/>
                     <br></br>
-                    <Link href='mailto:info@skan.ru' text='info@skan.ru' color={primaryColors.white}/>
+                    <Link href='mailto:info@skan.ru' text='info@skan.ru' fontColor={primaryColors.white}/>
                 </Address>
                 <span>Copyright. 2024</span>
             </TextContent>

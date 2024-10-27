@@ -1,9 +1,23 @@
 import { FC } from 'react';
 import { StyledButton } from './button.style';
+import { ButtonStyleProps } from './buttonStyleProps';
 
-const Button: FC<{ text: string }> = ({ text }) => {
+interface Props {
+    text: string;
+    style: ButtonStyleProps;
+}
+
+const Button: FC<Props> = ({ text, style }) => {
     return (
-        <StyledButton>{text}</StyledButton>
+        <StyledButton 
+            width={style.width}  
+            height={style.height} 
+            fontSize={style.fontSize} 
+            fontColor={style.fontColor} 
+            backgroundColor={style.backgroundColor} 
+        >
+            {text}
+        </StyledButton>
     );
 }
 
