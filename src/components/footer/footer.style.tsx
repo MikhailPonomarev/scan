@@ -14,7 +14,7 @@ export const StyledFooter = styled.footer`
     background-color: ${primaryColors.green};
 `;
 
-export const TextContent = styled.div`
+export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;

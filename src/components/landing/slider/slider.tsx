@@ -1,4 +1,4 @@
-import { Card, CardsWrapper, SliderContainer, SliderWrapper, Title } from './slider.style';
+import { Card, CardsContainer, SliderSection, SliderContainer, Title } from './slider.style';
 import { ReactComponent as TimeSvg } from '../../../assets/landing/slider/time.svg';
 import { ReactComponent as SearchSvg } from '../../../assets/landing/slider/search.svg';
 import { ReactComponent as ShieldSvg } from '../../../assets/landing/slider/shiled.svg';
@@ -22,14 +22,14 @@ const Slider = () => {
     ];
 
     return (
-        <SliderContainer>
+        <SliderSection>
             <Title>Почему именно мы</Title>
-            <SliderWrapper>
+            <SliderContainer>
                 <ChevronLeftSvg />
-                <CardsWrapper>{cards}</CardsWrapper>
+                <CardsContainer>{cards}</CardsContainer>
                 <ChevronRightSvg />
-            </SliderWrapper>
-        </SliderContainer>
+            </SliderContainer>
+        </SliderSection>
     );
 }
 

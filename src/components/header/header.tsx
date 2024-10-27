@@ -21,13 +21,12 @@ const Header = () => {
             <HeaderLogo />
             <Navigation>
                 <ul>
-                    {navLinks.map((it) => <li key={it}><Link href='/' text={it} /></li>)}
+                    {navLinks.map((it) => <li key={it}><Link href='/' text={it} fontColor={primaryColors.black} /></li>)}
                 </ul>
             </Navigation>
             <AuthContainer>
-                <Link href='/' text={'Зарегистрироваться'} />
+                <Link href='/' text={'Зарегистрироваться'} fontColor={primaryColors.black} opacity={'40%'} />
                 <Divider />
-                {/* <LoginBtn>Войти</LoginBtn> */}
                 <Button text='Войти' style={loginButtonStyle} />
             </AuthContainer>
         </StyledHeader>

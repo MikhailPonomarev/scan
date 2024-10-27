@@ -1,4 +1,4 @@
-import { Address, StyledFooter, TextContent } from './footer.style';
+import { Address, StyledFooter, TextContainer } from './footer.style';
 import { ReactComponent as FooterLogo } from '../../assets/footer/footer_logo.svg';
 import Link from '../common/link/link';
 import { primaryColors } from '../../style/variables.style';
@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <StyledFooter>
             <FooterLogo />
-            <TextContent>
+            <TextContainer>
                 <Address>
                     г. Москва, Цветной б-р, 4
                     <br></br>
@@ -16,7 +16,7 @@ const Footer = () => {
                     <Link href='mailto:info@skan.ru' text='info@skan.ru' fontColor={primaryColors.white}/>
                 </Address>
                 <span>Copyright. 2024</span>
-            </TextContent>
+            </TextContainer>
         </StyledFooter>
     );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { fonts } from '../../../style/variables.style';
 
-export const SliderContainer = styled.section`
+export const SliderSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 70px;
@@ -13,7 +13,7 @@ export const Title = styled.span`
     font-size: 45px;
 `;
 
-export const SliderWrapper = styled.div`
+export const SliderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ export const SliderWrapper = styled.div`
     }
 `;
 
-export const CardsWrapper = styled.div`
+export const CardsContainer = styled.div`
     display: flex;
     gap: 30px;
 `;

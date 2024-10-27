@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { fonts } from '../../../style/variables.style';
 
-export const BannerContainer = styled.section`
+export const BannerSection = styled.section`
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
     height: 620px;
 `;
 
-export const LeftSideWrapper = styled.div`
+export const LeftSideContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 70px;
@@ -16,7 +16,7 @@ export const LeftSideWrapper = styled.div`
     max-width: 745px;
 `;
 
-export const TextContent = styled.div`
+export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;

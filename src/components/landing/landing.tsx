@@ -1,15 +1,17 @@
 import Banner from './banner/banner';
-import { LandingWrapper } from './landing.style';
+import { LandingSection } from './landing.style';
+import Pricing from './pricing/pricing';
 import Separator from './separator/separator';
 import Slider from './slider/slider';
 
 const Landing = () => {
     return (
-        <LandingWrapper>
+        <LandingSection>
             <Banner />
             <Slider />
             <Separator />
-        </LandingWrapper>
+            <Pricing />
+        </LandingSection>
     );
 }
 

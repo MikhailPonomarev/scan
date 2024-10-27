@@ -1,5 +1,5 @@
 import Button from '../../common/button/button';
-import { BannerContainer, LeftSideWrapper, SubTitle, TextContent, Title } from './banner.style';
+import { BannerSection, LeftSideContainer, SubTitle, TextContainer, Title } from './banner.style';
 import { ReactComponent as BannerSvg } from '../../../assets/landing/banner/banner.svg';
 import { ButtonStyleProps } from '../../common/button/buttonStyleProps';
 import { primaryColors, secondaryColors } from '../../../style/variables.style';
@@ -14,16 +14,16 @@ const Banner = () => {
     };
 
     return (
-        <BannerContainer>
-            <LeftSideWrapper>
-                <TextContent>
+        <BannerSection>
+            <LeftSideContainer>
+                <TextContainer>
                     <Title>сервис по поиску публикаций о компании по его ИНН</Title>
                     <SubTitle>Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</SubTitle>
-                </TextContent>
+                </TextContainer>
                 <Button text={'Запросить данные'} style={buttonStyle}/>
-            </LeftSideWrapper>
+            </LeftSideContainer>
             <BannerSvg />
-        </BannerContainer>
+        </BannerSection>
     );
 }
 
