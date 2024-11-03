@@ -11,15 +11,24 @@ export const Card = styled.div<PricingCardStyleProps>`
     color: ${(props) => props.fontColor};
     border: 2px solid ${(props) => props.accentColor};
     border-radius: 10px;
-    box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 24px -4px rgba(66, 68, 90, 0.41);
 `;
 
 export const Header = styled.div<{ accentColor: string }>`
+    position: relative;
     display: flex;
+    justify-content: space-between;
     height: 132px;
     padding-top: 30px;
     padding-left: 30px;
     background-color: ${(props) => props.accentColor};
+
+    svg {
+        position: absolute;
+        right: 0px;
+        width: 95px;
+        height: 85px;
+    }
 `;
 
 export const HeaderTextContainer = styled.div`
