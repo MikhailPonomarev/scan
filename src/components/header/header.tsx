@@ -1,7 +1,7 @@
 import { ReactComponent as HeaderLogo } from '../../assets/header/header_logo.svg';
 import { primaryColors, secondaryColors } from '../../style/variables.style';
 import Button from '../common/button/button';
-import { ButtonStyleProps } from '../common/button/buttonStyleProps';
+import { ButtonStyleProps } from '../common/button/props/buttonStyleProps';
 import Link from '../common/link/link';
 import { AuthContainer, Divider, Navigation, StyledHeader } from './header.style';
 

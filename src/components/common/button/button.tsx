@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { StyledButton } from './button.style';
-import { ButtonStyleProps } from './buttonStyleProps';
+import { ButtonStyleProps } from './props/buttonStyleProps';
 
 interface Props {
     text: string;
@@ -15,6 +15,7 @@ const Button: FC<Props> = ({ text, style }) => {
             fontSize={style.fontSize} 
             fontColor={style.fontColor} 
             backgroundColor={style.backgroundColor} 
+            marginTop={style.marginTop}
         >
             {text}
         </StyledButton>

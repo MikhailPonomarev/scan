@@ -3,6 +3,8 @@ import { PricingCardStyleProps } from './props/pricingCardProps';
 import { fonts, primaryColors } from '../../../../style/variables.style';
 
 export const Card = styled.div<PricingCardStyleProps>`
+    display: flex;
+    flex-direction: column;
     width: 415px;
     height: 540px;
     font-family: ${fonts.inter};
@@ -37,7 +39,9 @@ export const HeaderSubTitle = styled.span`
 export const Body = styled.div`
     display: flex;
     flex-direction: column;
+    flex: 1;
     padding-top: 30px;
+    padding-bottom: 24px;
     padding-left: 30px;
     color: ${primaryColors.black};
 `;
@@ -59,13 +63,19 @@ export const PriceText = styled.span`
 `;
 
 export const MonthlyPaymentText = styled.span`
+    height: 24px;
     font-size: 18px;
+`;
+
+export const MonthlyPaymentWhitespace = styled.div`
+    height: 24px;
 `;
 
 export const TermsContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 60px;
 `;
 
 export const TermsTitle = styled.span`

@@ -5,9 +5,10 @@ export const StyledFooter = styled.footer`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 137px;
+    margin-top: 120px;
     padding-left: 60px;
     padding-right: 45px;
+    height: 137px;
     font-family: ${fonts.inter};
     font-size: 14px;
     color: ${primaryColors.white};

@@ -4,4 +4,5 @@ export interface ButtonStyleProps {
     fontSize: string;
     fontColor: string;
     backgroundColor: string;
+    marginTop?: string;
 }

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { PricingCardProps } from './props/pricingCardProps';
-import { Body, Card, Header, HeaderTextContainer, MonthlyPaymentText, PriceText, PriceTextsContainer, HeaderSubTitle, HeaderTitle, TermsContainer, TermsTitle, TermsListContainer, TermsItemContainer, TermsText } from './pricingCard.style';
+import { Body, Card, Header, HeaderTextContainer, MonthlyPaymentText, PriceText, PriceTextsContainer, HeaderSubTitle, HeaderTitle, TermsContainer, TermsTitle, TermsListContainer, TermsItemContainer, TermsText, MonthlyPaymentWhitespace } from './pricingCard.style';
 import { ReactComponent as GreenMark } from '../../../../assets/landing/pricing/green_mark.svg';
 import Button from '../../../common/button/button';
-import { ButtonStyleProps } from '../../../common/button/buttonStyleProps';
+import { ButtonStyleProps } from '../../../common/button/props/buttonStyleProps';
 import { primaryColors, secondaryColors } from '../../../../style/variables.style';
 
 const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
@@ -23,6 +23,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
     const buttonStyle: ButtonStyleProps = {
         width: '355px',
         height: '60px',
+        marginTop: 'auto',
         fontSize: '20px',
         fontColor: primaryColors.white,
         backgroundColor: secondaryColors.purple
@@ -44,10 +45,12 @@ const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
                         {data.newPrice + rouble}
                         <span>{data.oldPrice + rouble}</span>
                     </PriceText>
-                    {data.monthlyPrice && 
+                    {data.monthlyPrice ? 
                         (<MonthlyPaymentText>
                             или {data.monthlyPrice}{rouble}/мес. при рассрочке на 24 мес.
                         </MonthlyPaymentText>)
+                            :
+                        <MonthlyPaymentWhitespace />
                     }
                 </PriceTextsContainer>
                 <TermsContainer>

@@ -1,7 +1,7 @@
 import Button from '../../common/button/button';
 import { BannerSection, LeftSideContainer, SubTitle, TextContainer, Title } from './banner.style';
 import { ReactComponent as BannerSvg } from '../../../assets/landing/banner/banner.svg';
-import { ButtonStyleProps } from '../../common/button/buttonStyleProps';
+import { ButtonStyleProps } from '../../common/button/props/buttonStyleProps';
 import { primaryColors, secondaryColors } from '../../../style/variables.style';
 
 const Banner = () => {
