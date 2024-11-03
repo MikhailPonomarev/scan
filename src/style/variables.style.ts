@@ -13,4 +13,6 @@ export const secondaryColors = {
     orange: '#FFB64F',
     turquoise: '#7CE3E1',
     purple: '#5970FF',
+    grey: '#949494',
+    lightGrey: '#C7C7C7',
 };

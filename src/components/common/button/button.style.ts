@@ -3,6 +3,7 @@ import { ButtonStyleProps } from './props/buttonStyleProps';
 
 export const StyledButton = styled.button<ButtonStyleProps>`
     margin-top: ${(props) => props.marginTop};
+    padding: 0px;
     width: ${(props) => props.width};
     height: ${(props) => props.height};
     font-size: ${(props) => props.fontSize};
