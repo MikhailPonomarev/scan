@@ -1,4 +1,4 @@
-import { AuthServices, AuthServicesContainer, AuthServicesTitle, Container, FormContainer, Input, InputContainer, InputLabel, RecoverPasswordLink } from './loginForm.style';
+import { AuthServices, AuthServicesContainer, AuthServicesTitle, Container, FormContainer, Input, InputContainer, InputLabel, Option, OptionsContainer, RecoverPasswordLink } from './loginForm.style';
 import { ReactComponent as LockSvg } from '../../../assets/login/form/lock.svg';
 import Button from '../../common/button/button';
 import { ButtonStyleProps } from '../../common/button/props/buttonStyleProps';
@@ -19,7 +19,11 @@ export const LoginForm = () => {
 
     return (
         <Container>
-            {/* <LockSvg /> */}
+            <LockSvg />
+            <OptionsContainer>
+                <Option width='150px' active={true}>Войти</Option>
+                <Option width='210px' active={false}>Зарегистрироваться</Option>
+            </OptionsContainer>
             <FormContainer>
                 <InputContainer>
                     <InputLabel htmlFor='login'>Логин или номер телефона:</InputLabel>
