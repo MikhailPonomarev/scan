@@ -1,18 +1,24 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import { Layout } from './App.style';
 import Landing from '../components/landing/landing';
 import LoginPage from '../components/login/loginPage';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <Header />
-            <Layout>
-                <Landing />
-                <LoginPage />
-            </Layout>
+            <Provider store={store}>
+                <Header />
+                <Layout>
+                <Routes>
+                    <Route path='/' element={<Landing />} />
+                    <Route path='/login' element={<LoginPage />} />
+                </Routes>
+                </Layout>
+            </Provider>
             <Footer />
         </BrowserRouter>
     );

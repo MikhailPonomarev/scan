@@ -27,13 +27,13 @@ export const OptionsContainer = styled.div`
     height: 30px;
 `;
 
-export const Option = styled.div<{ width: string; active: boolean }>`
+export const Option = styled.div<{ width: string; $isActive: boolean }>`
     display: flex;
     justify-content: center;
     width: ${(props) => props.width};
-    color: ${(props) => (props.active ? primaryColors.green : secondaryColors.lightGrey)};
+    color: ${(props) => (props.$isActive ? primaryColors.green : secondaryColors.lightGrey)};
     border-bottom: 2px solid
-        ${(props) => (props.active ? primaryColors.green : secondaryColors.lightGrey)};
+        ${(props) => (props.$isActive ? primaryColors.green : secondaryColors.lightGrey)};
     cursor: pointer;
 `;
 

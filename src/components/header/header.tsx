@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as HeaderLogo } from '../../assets/header/header_logo.svg';
 import { primaryColors, secondaryColors } from '../../style/variables.style';
 import Button from '../common/button/button';
@@ -16,9 +17,15 @@ const Header = () => {
         backgroundColor: secondaryColors.turquoise
     };
 
+    const navigate = useNavigate();
+
+    const handleLogoClick = () => navigate('/');
+
+    const handleLoginButtonClick = () => navigate('/login');
+
     return (
         <StyledHeader>
-            <HeaderLogo />
+            <HeaderLogo onClick={handleLogoClick} />
             <Navigation>
                 <ul>
                     {navLinks.map((it) => <li key={it}><Link href='/' text={it} fontColor={primaryColors.black} /></li>)}
@@ -27,7 +34,7 @@ const Header = () => {
             <AuthContainer>
                 <Link href='/' text={'Зарегистрироваться'} fontColor={primaryColors.black} opacity={'40%'} />
                 <Divider />
-                <Button text='Войти' style={loginButtonStyle} />
+                <Button text='Войти' onClick={handleLoginButtonClick} style={loginButtonStyle} />
             </AuthContainer>
         </StyledHeader>
     );

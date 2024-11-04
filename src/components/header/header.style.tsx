@@ -10,6 +10,10 @@ export const StyledHeader = styled.header`
     height: 93px;
     font-family: ${fonts.inter};
     font-size: 14px;
+
+    svg {
+        cursor: pointer;
+    }
 `;
 
 export const Navigation = styled.nav`

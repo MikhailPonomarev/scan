@@ -7,15 +7,15 @@ import { ReactComponent as ChevronRightSvg } from '../../../assets/landing/slide
 
 const Slider = () => {
     const cards = [
-        (<Card>
+        (<Card key='speed'>
             <TimeSvg />
             <span>Высокая и оперативная скорость обработки заявки</span>
         </Card>),
-        (<Card>
+        (<Card key='database'>
             <SearchSvg />
             <span>Огромная комплексная база данных, обеспечивающая объективный ответ на запрос</span>
         </Card>),
-        (<Card>
+        (<Card key='security'>
             <ShieldSvg />
             <span>Защита конфеденциальных сведений, не подлежащих разглашению по федеральному законодательству</span>
         </Card>),

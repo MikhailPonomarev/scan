@@ -3,7 +3,7 @@ import { pricingCardsDataList } from './card/data/pricingCardsData';
 import { CardsContainer, PricingSection, Title } from './pricing.style';
 
 const Pricing = () => {
-    const cards = pricingCardsDataList.map((it) => <PricingCard data={it.data} style={it.style} />)
+    const cards = pricingCardsDataList.map((it) => <PricingCard data={it.data} style={it.style} />);
 
     return (
         <PricingSection>
