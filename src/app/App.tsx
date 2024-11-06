@@ -13,10 +13,10 @@ const App = () => {
             <Provider store={store}>
                 <Header />
                 <Layout>
-                <Routes>
-                    <Route path='/' element={<Landing />} />
-                    <Route path='/login' element={<LoginPage />} />
-                </Routes>
+                    <Routes>
+                        <Route path='/' element={<Landing />} />
+                        <Route path='/login' element={<LoginPage />} />
+                    </Routes>
                 </Layout>
             </Provider>
             <Footer />

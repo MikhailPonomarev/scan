@@ -37,7 +37,7 @@ export const authorize = createAsyncThunk(
             const data = await response.json();
             return data;
         } catch (error: any) {
-            return rejectWithValue(error.data);
+            return rejectWithValue(error);
         }
     },
 );
@@ -51,13 +51,15 @@ const authSlice = createSlice({
             state[expireKey] = null;
             state.isAuthorized = false;
             state.error = null;
+
+            localStorage.removeItem(accessTokenKey);
+            localStorage.removeItem(expireKey);
         },
     },
     extraReducers: (builder) => {
         builder
             .addCase(authorize.pending, (state) => {
                 state.isLoading = true;
-                state.error = null;
             })
             .addCase(authorize.fulfilled, (state, action: PayloadAction<AuthorizeReponse>) => {
                 state.isLoading = false;

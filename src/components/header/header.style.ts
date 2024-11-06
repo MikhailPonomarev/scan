@@ -16,6 +16,13 @@ export const StyledHeader = styled.header`
     }
 `;
 
+export const RightSideContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 780px;
+`;
+
 export const Navigation = styled.nav`
     ul {
         display: flex;
@@ -26,7 +33,35 @@ export const Navigation = styled.nav`
     }
 `;
 
-export const LimitContainer = styled.div``;
+export const LimitsContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 65px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+`;
+
+export const LimitsGrid = styled.div`
+    display: grid;
+    grid-template-columns: 125px 28px;
+    grid-auto-rows: minmax(17px, 17px);
+    gap: 5px;
+    align-items: center;
+`;
+
+export const LimitRowText = styled.span`
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+    color: ${secondaryColors.grey};
+`;
+
+export const LimitRowNumber = styled.span<{ $color: string }>`
+    font-weight: bold;
+    color: ${(props) => props.$color};
+`;
 
 export const AuthContainer = styled.div`
     display: flex;

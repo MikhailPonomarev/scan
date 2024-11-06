@@ -23,10 +23,12 @@ import { authorize } from '../../../redux/slice/authSlice';
 import { selectError, selectIsLoading } from '../../../redux/selector/authSelector';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { useNavigate } from 'react-router-dom';
+import { getAccountInfo } from '../../../redux/slice/accountInfoSlice';
 
 export const LoginForm = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+
     const isLoading = useAppSelector(selectIsLoading);
     const error = useAppSelector(selectError);
 
@@ -37,6 +39,7 @@ export const LoginForm = () => {
         e.preventDefault();
         await dispatch(authorize({ login, password }));
         navigate('/');
+        await dispatch(getAccountInfo(localStorage.getItem('accessToken')!));
     };
 
     const buttonStyleProps: ButtonStyleProps = {
