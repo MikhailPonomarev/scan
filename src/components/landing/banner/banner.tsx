@@ -3,8 +3,12 @@ import { BannerSection, LeftSideContainer, SubTitle, TextContainer, Title } from
 import { ReactComponent as BannerSvg } from '../../../assets/landing/banner/banner.svg';
 import { ButtonStyleProps } from '../../common/button/props/buttonStyleProps';
 import { primaryColors, secondaryColors } from '../../../style/variables.style';
+import { useAppSelector } from '../../../redux/hook';
+import { selectIsAuthorized } from '../../../redux/selector/authSelector';
 
 const Banner = () => {
+    const isAuthorzied = useAppSelector(selectIsAuthorized);
+
     const buttonStyle: ButtonStyleProps = {
         width: '335px',
         height: '65px',
@@ -20,7 +24,7 @@ const Banner = () => {
                     <Title>сервис по поиску публикаций о компании по его ИНН</Title>
                     <SubTitle>Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</SubTitle>
                 </TextContainer>
-                <Button text={'Запросить данные'} style={buttonStyle}/>
+                {isAuthorzied && <Button text={'Запросить данные'} style={buttonStyle}/>}
             </LeftSideContainer>
             <BannerSvg />
         </BannerSection>

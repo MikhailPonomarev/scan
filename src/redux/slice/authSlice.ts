@@ -8,6 +8,7 @@ interface AuthState {
     [accessTokenKey]: string | null;
     [expireKey]: string | null;
     isLoading: boolean;
+    isAuthorized: boolean;
     error: string | null;
 }
 
@@ -15,6 +16,7 @@ const initialState: AuthState = {
     [accessTokenKey]: localStorage.getItem(accessTokenKey) || null,
     [expireKey]: localStorage.getItem(expireKey) || null,
     isLoading: false,
+    isAuthorized: localStorage.getItem(accessTokenKey) ? true : false,
     error: null,
 };
 
@@ -44,7 +46,12 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        // logout: ()
+        logout(state) {
+            state[accessTokenKey] = null;
+            state[expireKey] = null;
+            state.isAuthorized = false;
+            state.error = null;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -56,6 +63,7 @@ const authSlice = createSlice({
                 state.isLoading = false;
                 state.accessToken = action.payload.accessToken;
                 state.expire = action.payload.expire;
+                state.isAuthorized = true;
 
                 localStorage.setItem(accessTokenKey, state.accessToken);
                 localStorage.setItem(expireKey, state.expire);
@@ -67,4 +75,5 @@ const authSlice = createSlice({
     },
 });
 
+export const { logout } = authSlice.actions;
 export default authSlice.reducer;

@@ -22,6 +22,7 @@ import { FormEvent, useState } from 'react';
 import { authorize } from '../../../redux/slice/authSlice';
 import { selectError, selectIsLoading } from '../../../redux/selector/authSelector';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
     const [login, setLogin] = useState<string>('');
@@ -30,10 +31,12 @@ export const LoginForm = () => {
     const error = useAppSelector(selectError);
 
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
         await dispatch(authorize({ login, password }));
+        navigate('/');
     };
 
     const buttonStyleProps: ButtonStyleProps = {

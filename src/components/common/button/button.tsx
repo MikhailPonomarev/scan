@@ -1,4 +1,4 @@
-import { FC, FormEvent } from 'react';
+import { FC } from 'react';
 import { StyledButton } from './button.style';
 import { ButtonStyleProps } from './props/buttonStyleProps';
 

@@ -1,12 +1,25 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { PricingCardProps } from './props/pricingCardProps';
-import { Body, Card, Header, HeaderTextContainer, MonthlyPaymentText, PriceText, PriceTextsContainer, HeaderSubTitle, HeaderTitle, TermsContainer, TermsTitle, TermsListContainer, TermsItemContainer, TermsText, MonthlyPaymentWhitespace } from './pricingCard.style';
+import { 
+    Body, 
+    Card, 
+    Header, 
+    HeaderTextContainer, 
+    MonthlyPaymentText, 
+    PriceText, 
+    PriceTextsContainer, 
+    HeaderSubTitle, 
+    HeaderTitle, 
+    TermsContainer, 
+    TermsTitle, 
+    TermsListContainer, 
+    TermsItemContainer, 
+    TermsText, 
+    MonthlyPaymentWhitespace 
+} from './pricingCard.style';
 import { ReactComponent as GreenMark } from '../../../../assets/landing/pricing/green_mark.svg';
-import Button from '../../../common/button/button';
-import { ButtonStyleProps } from '../../../common/button/props/buttonStyleProps';
-import { primaryColors, secondaryColors } from '../../../../style/variables.style';
 
-const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
+const PricingCard: FC<PricingCardProps & { children: ReactNode }> = ({ data, style, children }) => {
     const HeaderSvg = data.picture;
 
     const rouble = ' ₽';
@@ -19,16 +32,6 @@ const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
             </TermsItemContainer>
         );
     });
-
-    const buttonStyle: ButtonStyleProps = {
-        width: '355px',
-        height: '60px',
-        marginTop: 'auto',
-        fontSize: '20px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple
-    };
-
 
     return (
         <Card fontColor={style.fontColor} accentColor={style.accentColor}>
@@ -57,7 +60,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, style }) => {
                     <TermsTitle>В тариф входит:</TermsTitle>
                     <TermsListContainer>{terms}</TermsListContainer>
                 </TermsContainer>
-                <Button text='Подробнее' style={buttonStyle}/>
+                {children}
             </Body>
         </Card>
     );
