@@ -6,6 +6,7 @@ import Landing from '../components/landing/landing';
 import LoginPage from '../components/login/loginPage';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
+import SearchPage from '../components/search/searchPage';
 
 const App = () => {
     return (
@@ -14,8 +15,9 @@ const App = () => {
                 <Header />
                 <Layout>
                     <Routes>
-                        <Route path='/' element={<Landing />} />
-                        <Route path='/login' element={<LoginPage />} />
+                        {/* <Route path='/' element={<Landing />} />
+                        <Route path='/login' element={<LoginPage />} /> */}
+                        <Route path='/' element={<SearchPage />} />
                     </Routes>
                 </Layout>
             </Provider>
