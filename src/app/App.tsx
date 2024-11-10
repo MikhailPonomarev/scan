@@ -15,9 +15,9 @@ const App = () => {
                 <Header />
                 <Layout>
                     <Routes>
-                        {/* <Route path='/' element={<Landing />} />
-                        <Route path='/login' element={<LoginPage />} /> */}
-                        <Route path='/' element={<SearchPage />} />
+                        <Route path='/' element={<Landing />} />
+                        <Route path='/login' element={<LoginPage />} />
+                        <Route path='/search-form' element={<SearchPage />} />
                     </Routes>
                 </Layout>
             </Provider>

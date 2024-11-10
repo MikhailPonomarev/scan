@@ -1,16 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AccountInfoResponse } from '../model/accountInfoModel';
 
+const usedCompanyKey = 'usedCompanyCount';
+const companyLimitKey = 'companyLimit';
+
 interface AccountInfoState {
-    usedCompanyCount: number | null;
-    companyLimit: number | null;
+    [usedCompanyKey]: number | null;
+    [companyLimitKey]: number | null;
     isLoading: boolean;
     error: string | null;
 }
 
 const initialState: AccountInfoState = {
-    usedCompanyCount: null,
-    companyLimit: null,
+    usedCompanyCount: Number(localStorage.getItem(usedCompanyKey)) || null,
+    companyLimit: Number(localStorage.getItem(companyLimitKey)) || null,
     isLoading: false,
     error: null,
 };
@@ -43,18 +46,25 @@ const accountInfoSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getAccountInfo.pending, (state) => {
-            state.isLoading = true;
-        })
-        .addCase(getAccountInfo.fulfilled, (state, action: PayloadAction<AccountInfoResponse>) => {
-            state.isLoading = false;
-            state.usedCompanyCount = action.payload.eventFiltersInfo.usedCompanyCount;
-            state.companyLimit = action.payload.eventFiltersInfo.companyLimit;
-        })
-        .addCase(getAccountInfo.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.payload as string;
-        });
+        builder
+            .addCase(getAccountInfo.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(
+                getAccountInfo.fulfilled,
+                (state, action: PayloadAction<AccountInfoResponse>) => {
+                    state.isLoading = false;
+                    state[usedCompanyKey] = action.payload.eventFiltersInfo.usedCompanyCount;
+                    state[companyLimitKey] = action.payload.eventFiltersInfo.companyLimit;
+
+                    localStorage.setItem(usedCompanyKey, state[usedCompanyKey].toString());
+                    localStorage.setItem(companyLimitKey, state[companyLimitKey].toString());
+                },
+            )
+            .addCase(getAccountInfo.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload as string;
+            });
     },
 });
 

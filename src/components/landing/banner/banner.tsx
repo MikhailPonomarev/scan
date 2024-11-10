@@ -5,9 +5,11 @@ import { ButtonStyleProps } from '../../common/button/props/buttonStyleProps';
 import { primaryColors, secondaryColors } from '../../../style/variables.style';
 import { useAppSelector } from '../../../redux/hook';
 import { selectIsAuthorized } from '../../../redux/selector/authSelector';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
     const isAuthorzied = useAppSelector(selectIsAuthorized);
+    const navigate = useNavigate();
 
     const buttonStyle: ButtonStyleProps = {
         width: '335px',
@@ -17,6 +19,8 @@ const Banner = () => {
         backgroundColor: secondaryColors.purple
     };
 
+    const handleRequestDataButton = () => navigate('search-form');
+
     return (
         <BannerSection>
             <LeftSideContainer>
@@ -24,7 +28,7 @@ const Banner = () => {
                     <Title>сервис по поиску публикаций о компании по его ИНН</Title>
                     <SubTitle>Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</SubTitle>
                 </TextContainer>
-                {isAuthorzied && <Button text={'Запросить данные'} style={buttonStyle}/>}
+                {isAuthorzied && <Button text={'Запросить данные'} style={buttonStyle} onClick={handleRequestDataButton} />}
             </LeftSideContainer>
             <BannerSvg />
         </BannerSection>

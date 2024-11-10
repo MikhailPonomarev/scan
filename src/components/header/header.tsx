@@ -20,7 +20,7 @@ import {
     RightSideContainer
 } from './header.style';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
-import { selectAccessToken, selectIsAuthorized } from '../../redux/selector/authSelector';
+import { selectIsAuthorized } from '../../redux/selector/authSelector';
 import { logout } from '../../redux/slice/authSlice';
 import { selectCompanyLimit, selectUsedCompanyCount } from '../../redux/selector/accountInfoSelector';
 
@@ -53,7 +53,10 @@ const Header = () => {
 
     const handleLoginButtonClick = () => navigate('/login');
 
-    const handleLogoutButtonClick = () => dispatch(logout());
+    const handleLogoutButtonClick = () => {
+        dispatch(logout());
+        navigate('/');
+    }
 
     return (
         <StyledHeader>
