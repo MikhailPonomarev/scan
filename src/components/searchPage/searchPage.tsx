@@ -9,9 +9,9 @@ import {
     SearchFormTextContainer, 
     SearchFormTitle
 } from './searchPage.style';
-import { ReactComponent as DocumentSvg } from '../../assets/search/document.svg';
-import { ReactComponent as FoldersSvg } from '../../assets/search/folders.svg';
-import { ReactComponent as SearchBannerSvg } from '../../assets/search/search_banner.svg';
+import { ReactComponent as DocumentSvg } from '../../assets/searchPage/document.svg';
+import { ReactComponent as FoldersSvg } from '../../assets/searchPage/folders.svg';
+import { ReactComponent as SearchBannerSvg } from '../../assets/searchPage/search_banner.svg';
 import SearchForm from './form/searchForm';
 
 const SearchPage = () => {

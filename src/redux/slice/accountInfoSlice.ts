@@ -12,8 +12,14 @@ interface AccountInfoState {
 }
 
 const initialState: AccountInfoState = {
-    usedCompanyCount: Number(localStorage.getItem(usedCompanyKey)) || null,
-    companyLimit: Number(localStorage.getItem(companyLimitKey)) || null,
+    usedCompanyCount:
+        Number(localStorage.getItem(usedCompanyKey)) === 0
+            ? 0
+            : Number(localStorage.getItem(usedCompanyKey)),
+    companyLimit:
+        Number(localStorage.getItem(companyLimitKey)) === 0
+            ? 0
+            : Number(localStorage.getItem(companyLimitKey)),
     isLoading: false,
     error: null,
 };

@@ -19,7 +19,7 @@ const Banner = () => {
         backgroundColor: secondaryColors.purple
     };
 
-    const handleRequestDataButton = () => navigate('search-form');
+    const handleRequestDataButton = () => navigate('search-result');
 
     return (
         <BannerSection>

@@ -4,13 +4,14 @@ import { StyledLink } from './link.style';
 interface Props {
     href: string;
     text: string;
+    fontSize: string;
     fontColor: string;
-    opacity?: string;
+    textDecoration?: 'underline';
 }
 
-const Link: FC<Props> = ({ href, text, fontColor, opacity }) => {
+const Link: FC<Props> = ({ href, text, fontColor, fontSize, textDecoration }) => {
     return (
-        <StyledLink href={href} fontColor={fontColor} opacity={opacity}>
+        <StyledLink href={href} $fontSize={fontSize} $fontColor={fontColor} $textDecoration={textDecoration}>
             {text}
         </StyledLink>
     );

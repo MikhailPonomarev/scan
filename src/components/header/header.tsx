@@ -64,7 +64,13 @@ const Header = () => {
             <RightSideContainer>
                 <Navigation>
                     <ul>
-                        {navLinks.map((it) => <li key={it}><Link href='/' text={it} fontColor={primaryColors.black} /></li>)}
+                        {navLinks.map((it) => {
+                            return (
+                                <li key={it}>
+                                    <Link href='/' text={it} fontSize='14px' fontColor={primaryColors.black} />
+                                </li>
+                            );
+                        })}
                     </ul>
                 </Navigation>
                 {isAuthorized ? (
@@ -87,7 +93,7 @@ const Header = () => {
                     </>
                     ) : (
                         <AuthContainer>
-                            <Link href='/' text='Зарегистрироваться' fontColor={primaryColors.black} opacity={'40%'} />
+                            <Link href='/' text='Зарегистрироваться' fontSize='14px' fontColor={secondaryColors.grey} />
                             <Divider />
                             <Button text='Войти' onClick={handleLoginButtonClick} style={loginButtonStyle} />
                         </AuthContainer>

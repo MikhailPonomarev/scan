@@ -2,8 +2,8 @@ import { Card, CardsContainer, SliderSection, SliderContainer, Title } from './s
 import { ReactComponent as TimeSvg } from '../../../assets/landing/slider/time.svg';
 import { ReactComponent as SearchSvg } from '../../../assets/landing/slider/search.svg';
 import { ReactComponent as ShieldSvg } from '../../../assets/landing/slider/shiled.svg';
-import { ReactComponent as ChevronLeftSvg } from '../../../assets/landing/slider/chevron_left.svg';
-import { ReactComponent as ChevronRightSvg } from '../../../assets/landing/slider/chevron_right.svg';
+import { ReactComponent as ChevronLeftSvg } from '../../../assets/common/chevron_grey_left.svg';
+import { ReactComponent as ChevronRightSvg } from '../../../assets/common/chevron_grey_right.svg';
 
 const Slider = () => {
     const cards = [
