@@ -27,9 +27,19 @@ import { selectCompanyLimit, selectUsedCompanyCount } from '../../redux/selector
 const Header = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+
     const isAuthorized = useAppSelector(selectIsAuthorized);
     const usedCompanyCount = useAppSelector(selectUsedCompanyCount);
     const companyLimit = useAppSelector(selectCompanyLimit);
+
+    const handleLogoClick = () => navigate('/');
+
+    const handleLoginButtonClick = () => navigate('/login');
+
+    const handleLogoutButtonClick = () => {
+        dispatch(logout());
+        navigate('/');
+    }
 
     const navLinks = ['Главная', 'Тарифы', 'FAQ'];
 
@@ -48,15 +58,6 @@ const Header = () => {
         $fontColor: secondaryColors.lightGrey,
         $backgroundColor: primaryColors.white,
     };
-
-    const handleLogoClick = () => navigate('/');
-
-    const handleLoginButtonClick = () => navigate('/login');
-
-    const handleLogoutButtonClick = () => {
-        dispatch(logout());
-        navigate('/');
-    }
 
     return (
         <StyledHeader>

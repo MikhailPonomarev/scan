@@ -18,6 +18,24 @@ export const Container = styled.div`
         position: absolute;
         top: -60px;
         left: -50px;
+        z-index: 2;
+    }
+`;
+
+export const LoadingSpinnerContainer = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 80%;
+    z-index: 1;
+
+    svg {
+        width: 150px;
+        height: 150px;
     }
 `;
 

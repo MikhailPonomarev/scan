@@ -7,6 +7,7 @@ import {
     Input, 
     InputContainer, 
     InputLabel, 
+    LoadingSpinnerContainer, 
     Option, 
     OptionsContainer, 
     RecoverPasswordLink 
@@ -18,19 +19,22 @@ import { primaryColors, secondaryColors } from '../../../style/variables.style';
 import { ReactComponent as GoogleSvg } from '../../../assets/login/form/google.svg';
 import { ReactComponent as FacebookSvg } from '../../../assets/login/form/facebook.svg';
 import { ReactComponent as YandexSvg } from '../../../assets/login/form/yandex.svg';
-import { FormEvent, useState } from 'react';
+import { ReactComponent as SpinningDotsSvg } from '../../../assets/common/spinning_dots.svg';
+import { FormEvent, useEffect, useState } from 'react';
 import { authorize } from '../../../redux/slice/authSlice';
-import { selectError, selectIsLoading } from '../../../redux/selector/authSelector';
+import { selectIsAuthorized, selectIsLoading } from '../../../redux/selector/authSelector';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { useNavigate } from 'react-router-dom';
 import { getAccountInfo } from '../../../redux/slice/accountInfoSlice';
+import { getItemFromLocalStorage } from '../../../util/localStorage';
 
-export const LoginForm = () => {
+const LoginForm = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [isButtonDisabled, setIsDisabledButton] = useState<boolean>(false);
 
     const isLoading = useAppSelector(selectIsLoading);
-    const error = useAppSelector(selectError);
+    const isAuthorized = useAppSelector(selectIsAuthorized);
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -38,9 +42,14 @@ export const LoginForm = () => {
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
         await dispatch(authorize({ login, password }));
-        navigate('/');
-        await dispatch(getAccountInfo(localStorage.getItem('accessToken')!));
+        await dispatch(getAccountInfo(getItemFromLocalStorage('accessToken')!));
     };
+
+    useEffect(() => {
+        if (isAuthorized) {
+            navigate('/');
+        }
+    }, [isAuthorized, navigate]);
 
     const buttonStyleProps: ButtonStyleProps = {
         width: '380px',
@@ -54,6 +63,11 @@ export const LoginForm = () => {
     return (
         <Container>
             <LockSvg />
+            {isLoading && (
+                <LoadingSpinnerContainer>
+                    <SpinningDotsSvg />
+                </LoadingSpinnerContainer>
+            )}
             <OptionsContainer>
                 <Option width='150px' $isActive={true}>Войти</Option>
                 <Option width='210px' $isActive={false}>Зарегистрироваться</Option>
@@ -79,7 +93,7 @@ export const LoginForm = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </InputContainer>
-                <Button isDisabled type='submit' text='Войти' style={buttonStyleProps} />
+                <Button isDisabled={isButtonDisabled} type='submit' text='Войти' style={buttonStyleProps} />
             </FormContainer>
             <RecoverPasswordLink href='/' >Восстановить пароль</RecoverPasswordLink>
             <AuthServicesContainer>
