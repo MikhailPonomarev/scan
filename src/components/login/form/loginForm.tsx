@@ -79,7 +79,7 @@ export const LoginForm = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </InputContainer>
-                <Button type='submit' text='Войти' style={buttonStyleProps} />
+                <Button isDisabled type='submit' text='Войти' style={buttonStyleProps} />
             </FormContainer>
             <RecoverPasswordLink href='/' >Восстановить пароль</RecoverPasswordLink>
             <AuthServicesContainer>

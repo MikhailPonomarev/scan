@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { primaryColors, secondaryColors } from '../../../style/variables.style';
 import Button from '../../common/button/button';
 import { ButtonStyleProps } from '../../common/button/props/buttonStyleProps';
@@ -16,6 +17,8 @@ import {
 } from './searchForm.style';
 
 const SearchForm = () => {
+    const navigate = useNavigate();
+
     const inputsNames = ['ИНН компании *', 'Тональность', 'Количество документов в выдаче *'];
 
     const inputs = inputsNames.map((it) => {
@@ -53,6 +56,8 @@ const SearchForm = () => {
         $fontColor: primaryColors.white,
         $backgroundColor: secondaryColors.purple,
     };
+
+    const handleSearchButtonClick = () => navigate('/search-result');
     
     return (
         <Layout>
@@ -70,7 +75,7 @@ const SearchForm = () => {
                 <FormCheckboxesContainer>
                     {checkboxes}
                     <SearchButtonContainer>
-                        <Button text='Поиск' style={searchButtonStyle} />
+                        <Button text='Поиск' style={searchButtonStyle} onClick={handleSearchButtonClick} />
                         <span>* Обязательные к заполнению поля</span>
                     </SearchButtonContainer>
                 </FormCheckboxesContainer>

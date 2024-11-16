@@ -67,7 +67,7 @@ const Header = () => {
                         {navLinks.map((it) => {
                             return (
                                 <li key={it}>
-                                    <Link href='/' text={it} fontSize='14px' fontColor={primaryColors.black} />
+                                    <Link href='/' text={it} fontSize='14px' $fontColor={primaryColors.black} />
                                 </li>
                             );
                         })}
@@ -93,7 +93,7 @@ const Header = () => {
                     </>
                     ) : (
                         <AuthContainer>
-                            <Link href='/' text='Зарегистрироваться' fontSize='14px' fontColor={secondaryColors.grey} />
+                            <Link href='/' text='Зарегистрироваться' fontSize='14px' $fontColor={secondaryColors.grey} />
                             <Divider />
                             <Button text='Войти' onClick={handleLoginButtonClick} style={loginButtonStyle} />
                         </AuthContainer>

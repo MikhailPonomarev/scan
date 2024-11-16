@@ -19,7 +19,7 @@ const Banner = () => {
         $backgroundColor: secondaryColors.purple
     };
 
-    const handleRequestDataButton = () => navigate('search-result');
+    const handleRequestDataButton = () => navigate('search-form');
 
     return (
         <BannerSection>

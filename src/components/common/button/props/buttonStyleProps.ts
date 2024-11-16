@@ -5,4 +5,5 @@ export interface ButtonStyleProps {
     $fontColor: string;
     $backgroundColor: string;
     $marginTop?: string;
+    $isDisabled?: boolean;
 }

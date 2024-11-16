@@ -15,8 +15,8 @@ const beginner: PricingCardProps = {
         termsList: ['Безлимитная история запросов', 'Безопасная сделка', 'Поддержка 24/7'],
     },
     style: {
-        fontColor: primaryColors.black,
-        accentColor: secondaryColors.orange,
+        $fontColor: primaryColors.black,
+        $accentcolor: secondaryColors.orange,
     },
 };
 
@@ -31,8 +31,8 @@ const pro: PricingCardProps = {
         termsList: ['Все пункты тарифа Beginner', 'Экспорт истории', 'Рекомендации по приоритетам'],
     },
     style: {
-        fontColor: primaryColors.black,
-        accentColor: secondaryColors.turquoise,
+        $fontColor: primaryColors.black,
+        $accentcolor: secondaryColors.turquoise,
     },
 };
 
@@ -50,8 +50,8 @@ const business: PricingCardProps = {
         ],
     },
     style: {
-        fontColor: primaryColors.white,
-        accentColor: primaryColors.black,
+        $fontColor: primaryColors.white,
+        $accentcolor: primaryColors.black,
     },
 };
 

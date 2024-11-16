@@ -8,8 +8,8 @@ export const Card = styled.div<PricingCardStyleProps>`
     width: 415px;
     height: 540px;
     font-family: ${fonts.inter};
-    color: ${(props) => props.fontColor};
-    border: 2px solid ${(props) => props.accentColor};
+    color: ${(props) => props.$fontColor};
+    border: 2px solid ${(props) => props.$accentcolor};
     border-radius: 10px;
     box-shadow: 0px 0px 24px -4px rgba(66, 68, 90, 0.41);
 `;

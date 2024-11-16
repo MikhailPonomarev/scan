@@ -34,8 +34,8 @@ const PricingCard: FC<PricingCardProps & { children: ReactNode }> = ({ data, sty
     });
 
     return (
-        <Card fontColor={style.fontColor} accentColor={style.accentColor}>
-            <Header accentColor={style.accentColor!}>
+        <Card $fontColor={style.$fontColor} $accentcolor={style.$accentcolor}>
+            <Header accentColor={style.$accentcolor!}>
                 <HeaderTextContainer>
                     <HeaderTitle>{data.title}</HeaderTitle>
                     <HeaderSubTitle>{data.subTitle}</HeaderSubTitle>

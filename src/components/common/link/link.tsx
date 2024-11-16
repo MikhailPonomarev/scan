@@ -5,11 +5,11 @@ interface Props {
     href: string;
     text: string;
     fontSize: string;
-    fontColor: string;
+    $fontColor: string;
     textDecoration?: 'underline';
 }
 
-const Link: FC<Props> = ({ href, text, fontColor, fontSize, textDecoration }) => {
+const Link: FC<Props> = ({ href, text, $fontColor: fontColor, fontSize, textDecoration }) => {
     return (
         <StyledLink href={href} $fontSize={fontSize} $fontColor={fontColor} $textDecoration={textDecoration}>
             {text}

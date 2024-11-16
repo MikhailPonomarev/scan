@@ -47,7 +47,7 @@ const Documents = () => {
                                 href='https://google.com' 
                                 text='Комсомольская правда KP.RU' 
                                 fontSize='16px' 
-                                fontColor={secondaryColors.grey}
+                                $fontColor={secondaryColors.grey}
                                 textDecoration='underline'
                             />
                         </DocumentSourceContainer>
@@ -73,7 +73,7 @@ const Documents = () => {
                                 href='https://google.com' 
                                 text='Комсомольская правда KP.RU' 
                                 fontSize='16px' 
-                                fontColor={secondaryColors.grey}
+                                $fontColor={secondaryColors.grey}
                                 textDecoration='underline'
                             />
                         </DocumentSourceContainer>

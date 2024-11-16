@@ -16,6 +16,6 @@ interface PricingCardDataProps {
 }
 
 export interface PricingCardStyleProps {
-    fontColor?: string;
-    accentColor?: string;
+    $fontColor?: string;
+    $accentcolor?: string;
 }

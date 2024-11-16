@@ -7,9 +7,10 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     width: ${(props) => props.width};
     height: ${(props) => props.height};
     font-size: ${(props) => props.fontSize};
+    color: ${(props) => props.$fontColor};
+    background-color: ${(props) => props.$backgroundColor};
+    opacity: ${(props) => (props.$isDisabled ? '50%' : '0%')};
     border: none;
     border-radius: 5px;
-    background-color: ${(props) => props.$backgroundColor};
-    color: ${(props) => props.$fontColor};
-    cursor: pointer;
+    cursor: ${(props) => (props.$isDisabled ? 'not-allowed' : 'pointer')};
 `;

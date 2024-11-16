@@ -5,13 +5,15 @@ import { ButtonStyleProps } from './props/buttonStyleProps';
 interface Props {
     type?: 'submit';
     text: string;
+    isDisabled?: boolean;
     onClick?: () => void;
     style: ButtonStyleProps;
 }
 
-const Button: FC<Props> = ({ type, text, onClick, style }) => {
+const Button: FC<Props> = ({ type, text, isDisabled, onClick, style }) => {
     return (
-        <StyledButton 
+        <StyledButton
+            disabled={isDisabled}
             type={type}
             onClick={onClick}
             width={style.width}  
@@ -20,6 +22,7 @@ const Button: FC<Props> = ({ type, text, onClick, style }) => {
             $fontColor={style.$fontColor} 
             $backgroundColor={style.$backgroundColor} 
             $marginTop={style.$marginTop}
+            $isDisabled={isDisabled}
         >
             {text}
         </StyledButton>
