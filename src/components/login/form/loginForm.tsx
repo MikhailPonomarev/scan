@@ -46,9 +46,9 @@ export const LoginForm = () => {
         width: '380px',
         height: '60px',
         fontSize: '22px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple,
-        marginTop: '30px'
+        $fontColor: primaryColors.white,
+        $backgroundColor: secondaryColors.purple,
+        $marginTop: '30px'
     }
 
     return (

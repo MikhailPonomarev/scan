@@ -22,17 +22,17 @@ const Documents = () => {
         width: '305px',
         height: '60px',
         fontSize: '22px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple,
-        marginTop: '30px'
+        $fontColor: primaryColors.white,
+        $backgroundColor: secondaryColors.purple,
+        $marginTop: '30px'
     };
 
     const readInSourceButtonStyle: ButtonStyleProps = {
         width: '225px',
         height: '46px',
         fontSize: '16px',
-        fontColor: primaryColors.black,
-        backgroundColor: secondaryColors.turquoise,
+        $fontColor: primaryColors.black,
+        $backgroundColor: secondaryColors.turquoise,
     };
     
     return (

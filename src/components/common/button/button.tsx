@@ -17,9 +17,9 @@ const Button: FC<Props> = ({ type, text, onClick, style }) => {
             width={style.width}  
             height={style.height} 
             fontSize={style.fontSize} 
-            fontColor={style.fontColor} 
-            backgroundColor={style.backgroundColor} 
-            marginTop={style.marginTop}
+            $fontColor={style.$fontColor} 
+            $backgroundColor={style.$backgroundColor} 
+            $marginTop={style.$marginTop}
         >
             {text}
         </StyledButton>

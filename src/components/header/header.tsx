@@ -37,16 +37,16 @@ const Header = () => {
         width: '65px',
         height: '26px',
         fontSize: '14px',
-        fontColor: primaryColors.black,
-        backgroundColor: secondaryColors.turquoise,
+        $fontColor: primaryColors.black,
+        $backgroundColor: secondaryColors.turquoise,
     };
 
     const logoutButtonStyle: ButtonStyleProps = {
         width: '32px',
         height: '12px',
         fontSize: '10px',
-        fontColor: secondaryColors.lightGrey,
-        backgroundColor: primaryColors.white,
+        $fontColor: secondaryColors.lightGrey,
+        $backgroundColor: primaryColors.white,
     };
 
     const handleLogoClick = () => navigate('/');

@@ -50,8 +50,8 @@ const SearchForm = () => {
         width: '305px',
         height: '60px',
         fontSize: '22px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple,
+        $fontColor: primaryColors.white,
+        $backgroundColor: secondaryColors.purple,
     };
     
     return (

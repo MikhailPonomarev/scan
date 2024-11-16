@@ -15,8 +15,8 @@ const Banner = () => {
         width: '335px',
         height: '65px',
         fontSize: '22px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple
+        $fontColor: primaryColors.white,
+        $backgroundColor: secondaryColors.purple
     };
 
     const handleRequestDataButton = () => navigate('search-result');

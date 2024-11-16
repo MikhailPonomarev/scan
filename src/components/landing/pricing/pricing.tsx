@@ -13,19 +13,19 @@ const Pricing = () => {
     const goToAccountPageButton: ButtonStyleProps = {
         width: '355px',
         height: '60px',
-        marginTop: 'auto',
+        $marginTop: 'auto',
         fontSize: '20px',
-        fontColor: primaryColors.black,
-        backgroundColor: '#D2D2D2',
+        $fontColor: primaryColors.black,
+        $backgroundColor: '#D2D2D2',
     }
 
     const moreButtonStyle: ButtonStyleProps = {
         width: '355px',
         height: '60px',
-        marginTop: 'auto',
+        $marginTop: 'auto',
         fontSize: '20px',
-        fontColor: primaryColors.white,
-        backgroundColor: secondaryColors.purple,
+        $fontColor: primaryColors.white,
+        $backgroundColor: secondaryColors.purple,
     };
 
     const goToAccountPageBtn = <Button text='Перейти в личный кабинет' style={goToAccountPageButton}/>;
