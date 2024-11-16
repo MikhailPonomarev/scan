@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthorizeReponse, AuthorizeRequest } from '../model/authModel';
+import { getItemFromLocalStorage } from '../../util/localStorage';
 
 const accessTokenKey = 'accessToken';
 const expireKey = 'expire';
@@ -13,10 +14,10 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-    [accessTokenKey]: localStorage.getItem(accessTokenKey) || null,
-    [expireKey]: localStorage.getItem(expireKey) || null,
+    [accessTokenKey]: getItemFromLocalStorage(accessTokenKey),
+    [expireKey]: getItemFromLocalStorage(expireKey),
     isLoading: false,
-    isAuthorized: localStorage.getItem(accessTokenKey) ? true : false,
+    isAuthorized: getItemFromLocalStorage(accessTokenKey) ? true : false,
     error: null,
 };
 

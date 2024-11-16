@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AccountInfoResponse } from '../model/accountInfoModel';
+import { getItemFromLocalStorage } from '../../util/localStorage';
 
 const usedCompanyKey = 'usedCompanyCount';
 const companyLimitKey = 'companyLimit';
@@ -13,13 +14,13 @@ interface AccountInfoState {
 
 const initialState: AccountInfoState = {
     usedCompanyCount:
-        Number(localStorage.getItem(usedCompanyKey)) === 0
+        Number(getItemFromLocalStorage(usedCompanyKey)) === 0
             ? 0
-            : Number(localStorage.getItem(usedCompanyKey)),
+            : Number(getItemFromLocalStorage(usedCompanyKey)),
     companyLimit:
-        Number(localStorage.getItem(companyLimitKey)) === 0
+        Number(getItemFromLocalStorage(companyLimitKey)) === 0
             ? 0
-            : Number(localStorage.getItem(companyLimitKey)),
+            : Number(getItemFromLocalStorage(companyLimitKey)),
     isLoading: false,
     error: null,
 };
