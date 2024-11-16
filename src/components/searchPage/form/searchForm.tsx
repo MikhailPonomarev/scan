@@ -15,9 +15,12 @@ import {
     FormGrid,
     Layout 
 } from './searchForm.style';
+import { searchResultRoute } from '../../../app/routes';
 
 const SearchForm = () => {
     const navigate = useNavigate();
+
+    const handleSearchButtonClick = () => navigate(searchResultRoute);
 
     const inputsNames = ['ИНН компании *', 'Тональность', 'Количество документов в выдаче *'];
 
@@ -56,8 +59,6 @@ const SearchForm = () => {
         $fontColor: primaryColors.white,
         $backgroundColor: secondaryColors.purple,
     };
-
-    const handleSearchButtonClick = () => navigate('/search-result');
     
     return (
         <Layout>

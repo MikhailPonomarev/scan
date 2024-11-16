@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import SearchPage from '../components/searchPage/searchPage';
 import SearchResultPage from '../components/searchResultPage/searchResultPage';
+import { landingRoute, loginPageRoute, searchFormRoute, searchResultRoute } from './routes';
 
 const App = () => {
     return (
@@ -16,10 +17,10 @@ const App = () => {
                 <Header />
                 <Layout>
                     <Routes>
-                        <Route path='/' element={<Landing />} />
-                        <Route path='/login' element={<LoginPage />} />
-                        <Route path='/search-form' element={<SearchPage />} />
-                        <Route path='/search-result' element={<SearchResultPage />} />
+                        <Route path={landingRoute} element={<Landing />} />
+                        <Route path={loginPageRoute} element={<LoginPage />} />
+                        <Route path={searchFormRoute} element={<SearchPage />} />
+                        <Route path={searchResultRoute} element={<SearchResultPage />} />
                     </Routes>
                 </Layout>
             </Provider>

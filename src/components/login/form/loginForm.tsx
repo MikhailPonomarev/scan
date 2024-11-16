@@ -27,17 +27,36 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { useNavigate } from 'react-router-dom';
 import { getAccountInfo } from '../../../redux/slice/accountInfoSlice';
 import { getItemFromLocalStorage } from '../../../util/localStorage';
+import { landingRoute } from '../../../app/routes';
 
 const LoginForm = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [isButtonDisabled, setIsDisabledButton] = useState<boolean>(false);
+    const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
 
     const isLoading = useAppSelector(selectIsLoading);
     const isAuthorized = useAppSelector(selectIsAuthorized);
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (login.length > 0 && password.length > 0) {
+            setIsButtonDisabled(false);
+        }
+
+        if (login.length === 0 && password.length === 0) {
+            setIsButtonDisabled(true);
+        }
+
+        if (login.length > 0 && password.length === 0) {
+            setIsButtonDisabled(true);
+        }
+
+        if (login.length === 0 && password.length > 0) {
+            setIsButtonDisabled(true);
+        }
+    }, [login.length, password.length]);
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
@@ -47,7 +66,7 @@ const LoginForm = () => {
 
     useEffect(() => {
         if (isAuthorized) {
-            navigate('/');
+            navigate(landingRoute);
         }
     }, [isAuthorized, navigate]);
 

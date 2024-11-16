@@ -6,6 +6,7 @@ import { primaryColors, secondaryColors } from '../../../style/variables.style';
 import { useAppSelector } from '../../../redux/hook';
 import { selectIsAuthorized } from '../../../redux/selector/authSelector';
 import { useNavigate } from 'react-router-dom';
+import { searchFormRoute } from '../../../app/routes';
 
 const Banner = () => {
     const isAuthorzied = useAppSelector(selectIsAuthorized);
@@ -19,7 +20,7 @@ const Banner = () => {
         $backgroundColor: secondaryColors.purple
     };
 
-    const handleRequestDataButton = () => navigate('search-form');
+    const handleRequestDataButton = () => navigate(searchFormRoute);
 
     return (
         <BannerSection>

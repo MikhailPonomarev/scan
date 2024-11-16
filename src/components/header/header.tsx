@@ -23,6 +23,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { selectIsAuthorized } from '../../redux/selector/authSelector';
 import { logout } from '../../redux/slice/authSlice';
 import { selectCompanyLimit, selectUsedCompanyCount } from '../../redux/selector/accountInfoSelector';
+import { landingRoute, loginPageRoute } from '../../app/routes';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -32,13 +33,13 @@ const Header = () => {
     const usedCompanyCount = useAppSelector(selectUsedCompanyCount);
     const companyLimit = useAppSelector(selectCompanyLimit);
 
-    const handleLogoClick = () => navigate('/');
+    const handleLogoClick = () => navigate(landingRoute);
 
-    const handleLoginButtonClick = () => navigate('/login');
+    const handleLoginButtonClick = () => navigate(loginPageRoute);
 
     const handleLogoutButtonClick = () => {
         dispatch(logout());
-        navigate('/');
+        navigate(landingRoute);
     }
 
     const navLinks = ['Главная', 'Тарифы', 'FAQ'];
