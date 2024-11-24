@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { fonts, secondaryColors, primaryColors } from '../../../style/variables.style';
+import { DatePicker } from '@mui/x-date-pickers';
 
 export const Layout = styled.div`
     display: flex;
@@ -34,8 +35,8 @@ export const InputContainer = styled.div`
 
 export const Label = styled.label``;
 
-export const Input = styled.input<{ $width: '240px' | '175px' }>`
-    width: ${(props) => props.$width};
+export const Input = styled.input`
+    width: 240px;
     height: 45px;
     border: 1px solid ${secondaryColors.lightGrey};
     border-radius: 5px;
@@ -44,6 +45,11 @@ export const Input = styled.input<{ $width: '240px' | '175px' }>`
 export const DatePickerContainer = styled.div`
     display: flex;
     gap: 20px;
+`;
+
+export const StyledDatePicker = styled(DatePicker)`
+    width: 175px;
+    height: 45px;
 `;
 
 export const FormCheckboxesContainer = styled.div`

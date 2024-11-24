@@ -13,25 +13,24 @@ import {
     Label, 
     SearchButtonContainer, 
     FormGrid,
-    Layout 
+    Layout, 
+    StyledDatePicker
 } from './searchForm.style';
 import { searchResultRoute } from '../../../app/routes';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import 'dayjs/locale/de';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { useState } from 'react';
+import { Dayjs } from 'dayjs';
+
 
 const SearchForm = () => {
     const navigate = useNavigate();
 
     const handleSearchButtonClick = () => navigate(searchResultRoute);
 
-    const inputsNames = ['ИНН компании *', 'Тональность', 'Количество документов в выдаче *'];
-
-    const inputs = inputsNames.map((it) => {
-        return (
-            <InputContainer>
-                <Label>{it}</Label>
-                <Input $width='240px' />
-            </InputContainer>
-        );
-    });
+    const [dateStart, setDateStart] = useState<Dayjs | null>(null);
+    const [dateEnd, setDateEnd] = useState<Dayjs | null>(null);
 
     const checkboxesNames = [
         'Признак максимальной полноты', 
@@ -64,13 +63,34 @@ const SearchForm = () => {
         <Layout>
             <FormGrid>
                 <FormInputsContainer>
-                    {inputs}
+                    <InputContainer>
+                        <Label>ИНН компании *</Label>
+                        <Input />
+                    </InputContainer>
+                    <InputContainer>
+                        <Label>Тональность</Label>
+                        <Input />
+                    </InputContainer>
+                    <InputContainer>
+                        <Label>Количество документов в выдаче *</Label>
+                        <Input />
+                    </InputContainer>
                     <InputContainer>
                         <Label>Диапазон поиска *</Label>
-                        <DatePickerContainer>
-                            <Input $width='175px' />
-                            <Input $width='175px' />
-                        </DatePickerContainer>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='de'>
+                            <DatePickerContainer>
+                                <StyledDatePicker 
+                                    label='Дата начала'
+                                    value={dateStart}
+                                    onChange={(newDate) => setDateStart(newDate)}
+                                />
+                                <StyledDatePicker 
+                                    label='Дата конца'
+                                    value={dateEnd}
+                                    onChange={(newDate) => setDateEnd(newDate)}
+                                />
+                            </DatePickerContainer>
+                        </LocalizationProvider>
                     </InputContainer>
                 </FormInputsContainer>
                 <FormCheckboxesContainer>
