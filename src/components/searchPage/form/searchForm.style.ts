@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { fonts, secondaryColors, primaryColors } from '../../../style/variables.style';
 import { DatePicker } from '@mui/x-date-pickers';
+import 'react-dropdown/style.css';
 
 export const Layout = styled.div`
     display: flex;

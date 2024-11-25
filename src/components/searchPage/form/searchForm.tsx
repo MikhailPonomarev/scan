@@ -22,6 +22,8 @@ import 'dayjs/locale/de';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { useState } from 'react';
 import { Dayjs } from 'dayjs';
+import 'react-dropdown/style.css';
+import SelectTone from './select/selectTone';
 
 
 const SearchForm = () => {
@@ -69,7 +71,8 @@ const SearchForm = () => {
                     </InputContainer>
                     <InputContainer>
                         <Label>Тональность</Label>
-                        <Input />
+                        {/* <StyledSelect /> */}
+                        <SelectTone></SelectTone>
                     </InputContainer>
                     <InputContainer>
                         <Label>Количество документов в выдаче *</Label>
